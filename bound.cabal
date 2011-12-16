@@ -1,0 +1,7 @@
+Name:                Bound
+Version:             0.0
+Description:         Wrapper for data that can be unbounded
+Author:              Nate Soares
+Maintainer:          nate@natesoares.com
+Build-Type:          Simple
+Cabal-Version:       >=1.2
