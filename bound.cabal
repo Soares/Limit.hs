@@ -1,7 +1,12 @@
 Name:                Bound
-Version:             0.0
+Version:             0.1
 Description:         Wrapper for data that can be unbounded
 Author:              Nate Soares
 Maintainer:          nate@natesoares.com
 Build-Type:          Simple
-Cabal-Version:       >=1.2
+Cabal-Version:       >=1.6
+
+Library
+    Hs-Source-Dirs: src
+    Build-Depends: base
+    Exposed-modules: Data.Bound
