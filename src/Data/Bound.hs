@@ -41,4 +41,4 @@ fromBounded (Bounded x) = x
 
 fromBound :: a -> Bound a -> a
 fromBound d Unbounded = d
-fromBound d (Bounded x) = x
+fromBound _ (Bounded x) = x

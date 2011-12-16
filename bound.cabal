@@ -1,12 +1,27 @@
 Name:                Bound
-Version:             0.1
-Description:         Wrapper for data that can be unbounded
+Version:             0.1.1
+License:             MIT
+License-file:        LICENSE
+Category:            Data
+Synopsis:            Wrapper for data that can be unbounded
+Description:         Bound n is like Maybe n, except that Unbounded is treated
+                     as greater than all bounded data (whereas Nothing is
+                     traeted as lesser). Bound can do pretty much anything that
+                     Maybe can do, except it isn't an instance of MonadPlus,
+                     because there is no obvious 'zero'.
 Author:              Nate Soares
 Maintainer:          nate@natesoares.com
 Build-Type:          Simple
 Cabal-Version:       >=1.6
 
+source-repository this
+    type: git
+    location: git://github.com/Soares/Bound.hs.git
+    tag: 0.1.1
+
 Library
-    Hs-Source-Dirs: src
-    Build-Depends: base
-    Exposed-modules: Data.Bound
+    Hs-Source-Dirs:   src
+    Build-Depends:    base >= 4 && < 5
+    Exposed-modules:  Data.Bound
+    Ghc-Options:      -Wall
+    Ghc-Prof-Options: -auto-all
