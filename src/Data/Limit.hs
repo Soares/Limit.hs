@@ -12,7 +12,7 @@ data Limit a = Bounded a | Unbounded
     deriving (Eq, Read, Show)
 
 instance Ord a => Ord (Limit a) where
-    x <= y = fromLimit True $ liftM2 (<=) x y
+    x <= y = fromLimit (y == Unbounded) (liftM2 (<=) x y)
 
 instance Functor Limit where
     fmap _ Unbounded = Unbounded
@@ -36,7 +36,7 @@ isUnbounded :: Limit a -> Bool
 isUnbounded = not . isBounded
 
 fromBounded :: Limit a -> a
-fromBounded Unbounded = error "Limit.fromBounded: Unbounded"
+fromBounded Unbounded = error "Limit.fromBounded: Unbounded" -- YOUR BAD
 fromBounded (Bounded x) = x
 
 fromLimit :: a -> Limit a -> a
